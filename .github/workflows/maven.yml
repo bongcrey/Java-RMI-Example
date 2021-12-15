@@ -29,6 +29,6 @@ jobs:
       with:
         name: downloadable zipped jar file
         path: |
-          Java-RMI-Example/RMIInterfaces/target/*.jar
-          Java-RMI-Example/RMIServer/target/*.jar
-          Java-RMI-Example/RMIClient/target/*.jar
+          RMIInterfaces/target/*.jar
+          RMIServer/target/*.jar
+          RMIClient/target/*.jar
