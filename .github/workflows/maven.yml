@@ -24,11 +24,14 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Consolidate artifacts into jarfiles
+      run: |
+        mkdir jarfiles
+        cp RMIInterfaces/target/*.jar jarfiles
+        cp RMIServer/target/*.jar jarfiles
+        cp RMIClient/target/*.jar jarfiles
     - name: Upload zipped artifact for download
       uses: actions/upload-artifact@v2
       with:
         name: downloadable zipped jar file
-        path: |
-          RMIInterfaces/target/*.jar
-          RMIServer/target/*.jar
-          RMIClient/target/*.jar
+        path: jarfiles/*.jar
