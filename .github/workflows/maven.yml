@@ -26,6 +26,8 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Upload zipped artifact for download
       uses: actions/upload-artifact@v2
-      with:
+      with: |
         name: downloadable zipped jar file
-        path: target/*.jar
+        path: RMIInterfaces/target/*.jar
+        path: RMIServer/target/*.jar
+        path: RMIClient/target/*.jar
